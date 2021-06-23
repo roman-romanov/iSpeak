@@ -43,9 +43,9 @@ class _NatureWidgetState extends State<NatureWidget> {
             width: double.infinity,
             height: 182,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/china-5151605_1920.png'),
-                  fit: BoxFit.fill),
+              // image: DecorationImage(
+              //     image: AssetImage('assets/images/'),
+              //     fit: BoxFit.fill),
               borderRadius: BorderRadius.circular(40),
             ),
             child: Padding(

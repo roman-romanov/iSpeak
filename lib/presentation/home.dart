@@ -12,16 +12,16 @@ import 'package:i_speak/widgets/travel.dart';
 
 import '../widgets/logo_widget.dart';
 
-class Tape extends StatefulWidget {
-  const Tape({Key? key, required this.title}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _TapeState createState() => _TapeState();
+  _HomeState createState() => _HomeState();
 }
 
-class _TapeState extends State<Tape> {
+class _HomeState extends State<Home> {
   var _middleIconAdd = MiddleAdd();
   var _logo = Logo();
   var _menuIconButton = MenuIconButton();
@@ -105,16 +105,16 @@ class _TapeState extends State<Tape> {
 }
 
 
-// class Tape extends StatefulWidget {
-//   const Tape({Key? key, required this.title}) : super(key: key);
+// class Home extends StatefulWidget {
+//   const Home({Key? key, required this.title}) : super(key: key);
 
 //   final String title;
 
 //   @override
-//   _TapeState createState() => _TapeState();
+//   _HomeState createState() => _HomeState();
 // }
 
-// class _TapeState extends State<Tape> {
+// class _HomeState extends State<Home> {
 //   var _middleIconAdd = MiddleAdd();
 //   var _logo = Logo();
 //   var _menuIconButton = MenuIconButton();

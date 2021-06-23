@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:i_speak/pages/second_page.dart';
-import 'package:i_speak/settings/settings_pages.dart';
+import 'package:i_speak/data/app_data.dart';
+import 'package:i_speak/model/profile.dart';
+import 'package:i_speak/internal/second_page.dart';
 
 class IListeningWidget extends StatefulWidget {
   const IListeningWidget({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class IListeningWidget extends StatefulWidget {
 
 class _IListeningWidgetState extends State<IListeningWidget> {
   final items = List<String>.generate(20, (index) => '${index + 1}');
+  Profile profile = Profile();
 
   @override
   Widget build(BuildContext context) {
@@ -21,91 +23,95 @@ class _IListeningWidgetState extends State<IListeningWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextButton(
-              style:
-                  ButtonStyle(tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return SecondPage();
-                  },
-                ));
-              },
-              child: RichText(
-                text: TextSpan(children: <TextSpan>[
-                  TextSpan(
-                    text: 'Я слушаю',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  TextSpan(
-                      text: ' 28 ',
-                      style: TextStyle(
-                          color: Color(0xFF7FBBFB),
-                          fontSize: 15,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500)),
-                  TextSpan(
-                    text: 'человека',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ]),
-              ),
-            ),
+            _iListening(),
             Container(
               height: 45,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                    //final item = items[index];
-                    return //Dismissible(
-                        //key: Key(item.toString()),
-                        // onDismissed: (direction) {
-                        //setState(() {
-                        // items.removeAt(index);
-                        //  });
-                        //   ScaffoldMessenger.of(context)
-                        // .showSnackBar(SnackBar(content: Text('$item-й удален из списка')));
-                        // },
-                        //child:
-                        Padding(
-                      padding: const EdgeInsets.only(left: 0.0, right: 9.0),
-                      child: Container(
-                        height: 45,
-                        width: 45,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          gradient: topMiddleIconAddGradient,
-                          //color: Colors.blue,
-                        ),
-                        child: IconButton(
-                          constraints: BoxConstraints(),
-                          onPressed: () {
-                            print('IconButton');
-                          },
-                          icon: Icon(
-                            CupertinoIcons.person_solid,
-                            color: Colors.white,//index % 2 == 0 ? Colors.black : Colors.white,
+              child: ListView(scrollDirection: Axis.horizontal, children: [
+                for (int i = 0; i < AppData.profiles.length; i++)
+                  Wrap(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          profile = AppData.profiles[i];
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: 45,
+                          width: 45,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    '${AppData.profiles[i].imageUrl}'),
+                                fit: BoxFit.cover),
                           ),
                         ),
-                      ),
-                      //),
-                    );
-                  }),
+                      )
+                    ],
+                  ),
+              ]),
             ),
           ],
         ),
       ),
     );
   }
+
+  _iListening() {
+    return TextButton(
+      style: ButtonStyle(tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) {
+                return Scaffold(body: SecondPage()); //SecondPage();
+              },
+              fullscreenDialog: true,
+            ));
+      },
+      child: RichText(
+        text: TextSpan(children: <TextSpan>[
+          TextSpan(
+            text: 'Я слушаю',
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 15,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          TextSpan(
+              text: ' 28 ',
+              style: TextStyle(
+                  color: Color(0xFF7FBBFB),
+                  fontSize: 15,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w500)),
+          TextSpan(
+            text: 'человека',
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 15,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ]),
+      ),
+    );
+  }
 }
+
+  // final item = items[index];
+  //                   return Dismissible(
+  //                       key: Key(item.toString()),
+  //                       onDismissed: (direction) {
+  //                       setState(() {
+  //                       items.removeAt(index);
+  //                        });
+  //                         ScaffoldMessenger.of(context)
+  //                       .showSnackBar(SnackBar(content: Text('$item-й удален из списка')));
+  //                       },
+  //                       child:
+  //                        ),

@@ -43,9 +43,9 @@ class _HealthWidgetState extends State<HealthWidget> {
             width: double.infinity,
             height: 182,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/flower-5495384_1920.png'),
-                  fit: BoxFit.fill),
+              // image: DecorationImage(
+              //     image: AssetImage('assets/images/'),
+              //     fit: BoxFit.fill),
               borderRadius: BorderRadius.circular(40),
             ),
             child: Padding(

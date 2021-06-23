@@ -43,7 +43,7 @@ class _HistoryInDetailsWidgetState extends State<HistoryInDetailsWidget> {
             height: 182,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/champagne-4734176_1920.png'),
+                  image: NetworkImage('https://s3-alpha-sig.figma.com/img/3e6e/7045/6e553339fbde41a5b92909227defd3f6?Expires=1624838400&Signature=KuXt7yptNLXjlvHWwUaQFMtRVuJhSlbAfANZa8J3SmgTai2xa5-D7KsIeZHxmmz~2smFGBlkabV5nel-qrVnsR4Wl-Du3SDv4Tzd0qMF82DWcN~kO6ruf7tE0pQxwL6R28CnHMzDwgk8zmyY41zkm-FphA~lVZqAhK382TR2VJ39KLwBNuqh36GAnlaN5Ix2fMCkfmCo4rO2mvNn15DcNmYf9W7MPhIkx3ZPbdbM7bbPBZzDAuFSg42RgPmKR1LTFcLAMXcb~FP~of8gvS5MZ7mb4R~BapQC3kZBVAc3LkyQV8HM3NX8ZpO3dpAw3hopbF-wX0jCbIU6nn9b4YAc-Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
                   fit: BoxFit.fill),
               borderRadius: BorderRadius.circular(40),
             ),
@@ -106,8 +106,8 @@ class _HistoryInDetailsWidgetState extends State<HistoryInDetailsWidget> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
                           image: DecorationImage(
-                              image: AssetImage(
-                                  'assets/images/girls-602168_1920.png'),
+                              image: NetworkImage(
+                                  'https://s3-alpha-sig.figma.com/img/3e6e/7045/6e553339fbde41a5b92909227defd3f6?Expires=1624838400&Signature=KuXt7yptNLXjlvHWwUaQFMtRVuJhSlbAfANZa8J3SmgTai2xa5-D7KsIeZHxmmz~2smFGBlkabV5nel-qrVnsR4Wl-Du3SDv4Tzd0qMF82DWcN~kO6ruf7tE0pQxwL6R28CnHMzDwgk8zmyY41zkm-FphA~lVZqAhK382TR2VJ39KLwBNuqh36GAnlaN5Ix2fMCkfmCo4rO2mvNn15DcNmYf9W7MPhIkx3ZPbdbM7bbPBZzDAuFSg42RgPmKR1LTFcLAMXcb~FP~of8gvS5MZ7mb4R~BapQC3kZBVAc3LkyQV8HM3NX8ZpO3dpAw3hopbF-wX0jCbIU6nn9b4YAc-Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'), //AssetImage('assets/images/girls-602168_1920.png'),
                               fit: BoxFit.fill)),
                       child: IconButton(
                         constraints: BoxConstraints(),

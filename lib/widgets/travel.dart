@@ -44,7 +44,8 @@ class _TravelWidgetState extends State<TravelWidget> {
             height: 182,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/city-4011922_1920.png'),
+                  image: NetworkImage(
+                      'https://s3-alpha-sig.figma.com/img/8a99/bb9a/01e530f68a38f96ed96ed5636b53a168?Expires=1624838400&Signature=ViQBP8s9980uARyTAzuY~bHO3u43q8ksdAgVslJLC8x0Bco17HMbJbWVF4EGfNzSMlS~IKyoxoZKDsYN7Ee~J8mlb85-WbAYUSNwQvqPJOku7ZA-9lZ1b30HJBKTSw8d7vuS0c9sFCAX1e7T5C0591mtV6EWTpYE0WyEhASuhadF2DBHJUSqNJ6Pdb2ZmRCRvIzzaHuNFMf8bLPrGZ2BtwMYFq7ZbpNe5tFaS2GHUvIJ3PbCf7jwdkJM7r4CsFLQ5ToaLb9FC1GbMc7iGj~1GkLrze~1khnstIl9o8pKXMH~iRZynjmc2hNdSe9SxBqOWNJgXGFr8Mu4U9q-VqdyQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
                   fit: BoxFit.fill),
               borderRadius: BorderRadius.circular(40),
             ),
@@ -106,8 +107,10 @@ class _TravelWidgetState extends State<TravelWidget> {
                       width: 45,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          gradient: topMiddleIconAddGradient),
-                      //color: Colors.black),
+                          gradient: topMiddleIconAddGradient,
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  'https://s3-alpha-sig.figma.com/img/8a99/bb9a/01e530f68a38f96ed96ed5636b53a168?Expires=1624838400&Signature=ViQBP8s9980uARyTAzuY~bHO3u43q8ksdAgVslJLC8x0Bco17HMbJbWVF4EGfNzSMlS~IKyoxoZKDsYN7Ee~J8mlb85-WbAYUSNwQvqPJOku7ZA-9lZ1b30HJBKTSw8d7vuS0c9sFCAX1e7T5C0591mtV6EWTpYE0WyEhASuhadF2DBHJUSqNJ6Pdb2ZmRCRvIzzaHuNFMf8bLPrGZ2BtwMYFq7ZbpNe5tFaS2GHUvIJ3PbCf7jwdkJM7r4CsFLQ5ToaLb9FC1GbMc7iGj~1GkLrze~1khnstIl9o8pKXMH~iRZynjmc2hNdSe9SxBqOWNJgXGFr8Mu4U9q-VqdyQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'))),
                       child: IconButton(
                         constraints: BoxConstraints(),
                         onPressed: () {

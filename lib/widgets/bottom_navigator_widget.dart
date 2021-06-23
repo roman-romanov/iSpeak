@@ -14,17 +14,6 @@ class _BottomNavigatorWidgetState extends State<BottomNavigatorWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        TextButton(
-          child: Container(
-            height: 25,
-            width: 25,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                image: DecorationImage(
-                    image: AssetImage('assets/images/4-circles.png'))),
-          ),
-          onPressed: () {},
-        ),
         Container(
           height: 85,
           child: IconButton(
@@ -39,17 +28,6 @@ class _BottomNavigatorWidgetState extends State<BottomNavigatorWidget> {
               size: 35,
             ),
           ),
-        ),
-         TextButton(
-          child: Container(
-            height: 27,
-            width: 27,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                image: DecorationImage(
-                    image: AssetImage('assets/images/2.png'))),
-          ),
-          onPressed: () {},
         ),
       ],
     );

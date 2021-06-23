@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:i_speak/internal/settings_user_profile.dart';
+//import 'package:i_speak/pages/user_profile.dart';
 import 'package:i_speak/settings/settings_pages.dart';
 
 class MiddleAdd extends StatelessWidget {
@@ -15,6 +17,13 @@ class MiddleAdd extends StatelessWidget {
       child: IconButton(
         padding: EdgeInsets.only(left: 0.0),
         onPressed: () {
+          Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) {
+                        return Scaffold(body: SettingsUserProfilePage()); //SecondPage();
+                      },
+                    ));
           print('Middle Add');
         },
         icon: Icon(Icons.add),
